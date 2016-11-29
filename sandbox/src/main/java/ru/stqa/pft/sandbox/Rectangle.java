@@ -1,15 +1,15 @@
 package ru.stqa.pft.sandbox;
 
 /**
- * Created by Sviatoslav on 11/26/2016.
+ * Created by Sviatoslav on 11/27/2016.
  */
 public class Rectangle {
   public double a;
   public double b;
 
-  public Rectangle(double a, double b) {
-   this.a = a;
-   this.b = b;
-  }
+  public Rectangle(double a, double b){
+    this.a = a;
+    this.b = b;
 
+  }
 }
