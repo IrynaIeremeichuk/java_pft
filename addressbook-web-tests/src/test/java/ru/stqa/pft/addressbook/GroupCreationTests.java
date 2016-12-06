@@ -60,7 +60,7 @@ public class GroupCreationTests {
   }
 
   private void initGroupCreation() {
-    wd.findElement(By.name("group_name")).click();
+    wd.findElement(By.name("new")).click();
   }
 
   private void gotoGroupPage() {
