@@ -1,36 +1,38 @@
 package ru.stqa.pft.addressbook;
 
 public class ContactData {
-  private final String firstName;
-  private final String lastName;
+  private final String firstname;
+  private final String lastname;
   private final String nickname;
   private final String title;
   private final String company;
   private final String address;
   private final String mobilephone;
-  private final String email1;
-  private final String year;
+  private final String workphone;
+  private final String email;
+  private final String byear;
   private final String address2;
 
-  public ContactData(String FirstName, String LastName, String Nickname, String title, String company, String address, String mobilephone, String email1, String year, String address2) {
-    firstName = FirstName;
-    lastName = LastName;
-    nickname = Nickname;
+  public ContactData(String firstname, String lastname, String nickname, String title, String company, String address, String mobilephone, String workphone, String email, String byear, String address2) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.nickname = nickname;
     this.title = title;
     this.company = company;
     this.address = address;
     this.mobilephone = mobilephone;
-    this.email1 = email1;
-    this.year = year;
+    this.workphone = workphone;
+    this.email = email;
+    this.byear = byear;
     this.address2 = address2;
   }
 
-  public String getFirstName() {
-    return firstName;
+  public String getFirstname() {
+    return firstname;
   }
 
-  public String getLastName() {
-    return lastName;
+  public String getLastname() {
+    return lastname;
   }
 
   public String getNickname() {
@@ -53,12 +55,16 @@ public class ContactData {
     return mobilephone;
   }
 
-  public String getEmail1() {
-    return email1;
+  public String getWorkphone() {
+    return workphone;
   }
 
-  public String getYear() {
-    return year;
+  public String getEmail() {
+    return email;
+  }
+
+  public String getByear() {
+    return byear;
   }
 
   public String getAddress2() {
