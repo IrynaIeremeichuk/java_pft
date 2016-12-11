@@ -46,4 +46,8 @@ public class ContactHelper extends HelperBase {
   public void selectContact() {
     click(By.name("selected[]"));
   }
+  public void submitContactModification() {
+    click(By.name("update"));
+  }
+
 }
