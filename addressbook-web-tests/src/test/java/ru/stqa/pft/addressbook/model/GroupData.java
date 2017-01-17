@@ -26,13 +26,6 @@ public class GroupData {
     return result;
   }
 
-  public String getName() {
-    return name;
-  }
-
-  public String getHeader() {
-    return header;
-  }
 
   public GroupData withId(int id) {
     this.id = id;
@@ -62,11 +55,20 @@ public class GroupData {
             '}';
   }
 
+  public int getId() {
+    return id;
+  }
+
   public String getFooter() {
     return footer;
   }
 
-  public int getId() {
-    return id;
+  public String getName() {
+    return name;
   }
+
+  public String getHeader() {
+    return header;
+  }
+
 }
