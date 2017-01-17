@@ -108,7 +108,8 @@ public class ContactHelper extends HelperBase {
   }
 
   private void selectContactById(int id) {
-    wd.findElement(By.cssSelector("input[value='"+id+"']"));
+
+    wd.findElement(By.cssSelector("input[value='"+id+"']")).click();
   }
 
   public void returnToHomePage() {
