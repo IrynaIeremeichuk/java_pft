@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -93,13 +94,6 @@ public class ContactHelper extends HelperBase {
     wd.findElement(By.xpath("//img[@title='Edit']")).click();
   }
 
-  public void delete(int index) {
-    selectContact(index);
-    deleteContact();
-    confirmContactDeletion();
-    returnToHomePage();
-  }
-
   public void delete(ContactData contact) {
     selectContactById(contact.getId());
     deleteContact();
@@ -129,22 +123,9 @@ public class ContactHelper extends HelperBase {
       return wd.findElements(By.name("selected[]")).size();
     }
 
-    public List<ContactData> list() {
-      List<ContactData> contacts = new ArrayList<ContactData>();
-      List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
-      for(WebElement element: elements) {
-        List<WebElement> cells = element.findElements(By.cssSelector("td"));
-        int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-        String firstname = cells.get(2).getText();
-        String lastname = cells.get(1).getText();
-        ContactData contact = new ContactData().withId(id).withFirstname(firstname).withLastname(lastname);
-        contacts.add(contact);
-    }
-    return contacts;
-  }
 
-  public Set<ContactData> all() {
-    Set<ContactData> contacts = new HashSet<ContactData>();
+  public Contacts all() {
+    Contacts contacts = new Contacts();
     List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
     for(WebElement element: elements) {
       List<WebElement> cells = element.findElements(By.cssSelector("td"));
