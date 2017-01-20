@@ -21,7 +21,7 @@ public class ContactModificationTests extends TestBase {
     app.goTo().HomePage();
     if (app.contact().all().size() == 0) {
       app.contact().create(new ContactData().withFirstname("Ira").withLastname("Me").withGroup("test1").withNickname("Me_Ira").withTitle("QA").
-              withCompany("uTest").withAddress("online").withMobilephone("8188267879").withWorkphone("8188267879").withEmail("ira@gmail.com").
+              withCompany("uTest").withAddress("online").withHomephone("1234567895").withMobilephone("8188267879").withWorkphone("8188267879").withEmail("ira@gmail.com").
               withByear("1985").withAddress2("Fremont, CA"), true);
     }
   }
