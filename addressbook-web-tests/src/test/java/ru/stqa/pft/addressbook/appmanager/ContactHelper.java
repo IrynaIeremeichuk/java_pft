@@ -132,14 +132,28 @@ public class ContactHelper extends HelperBase {
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
       String firstname = cells.get(2).getText();
       String lastname = cells.get(1).getText();
-      String allphones = cells.get(5).getText();
-      String allemails = cells.get(4).getText();
       String address = cells.get(3).getText();
+      String allemails = cells.get(4).getText();
+      String allphones = cells.get(5).getText();
+
       ContactData contact = new ContactData().withId(id).withFirstname(firstname).
               withLastname(lastname).withAllphones(allphones).withAllemails(allemails).withAddress(address);
       contacts.add(contact);
     }
     return contacts;
+  }
+
+  public String contactDetailes(ContactData contact) {
+    viewDetails(contact.getId());
+    String details = wd.findElement(By.id("content")).getText();
+    wd.navigate().back();
+
+    return details.replaceAll("\\s", "").replaceAll("H:","").replaceAll("M:","").replaceAll("W:","");
+
+  }
+
+  private void viewDetails(int id) {
+    wd.findElement(By.cssSelector(String.format("a[href='view.php?id=%s']", id))).click();
   }
 
 
